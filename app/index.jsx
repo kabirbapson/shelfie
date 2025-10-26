@@ -3,28 +3,38 @@ import Shelfie from "../assets/images/shelfie.png";
 import { Link } from "expo-router";
 import ThemedView from "../components/ThemedView";
 import Spacer from "../components/Spacer";
+import ThemedButton from "../components/ThemedButton";
+// import client from "../lib/appwriteClient";
+// import { account } from "../lib/appwrite";
 const Home = () => {
+    const handleSubmit = () => {
+        console.log("Button Pressed!");
+    }
+    // console.log(client,'heyyy');
+    // console.log(account, 'heyyy');
+    
+    console.log('object');
   return (
-    <ThemedView>
+    <ThemedView style={styles.container}>
       <Image
         source={require("../assets/images/shelfie.png")}
         style={[styles.img, { width: 22 }]}
       />
       {/* <Image source={Shelfie}  /> */}
       <Link href="/login" asChild>
-              <Pressable>
-                  <Spacer />
-                  <Text>Go to Login Page</Text>
-                  <Spacer />
+        <Pressable>
+          <Spacer />
+          <Text>Go to Login Page</Text>
+          <Spacer />
         </Pressable>
       </Link>
-       <Link href="/{auth}/login" style={styles.link}>
+      <Link href="/{auth}/login" style={styles.link}>
         <Text>Login</Text>
-          </Link>
-          
-          <Pressable style={[{pressed:()=>[styles.btn, styles.pressed]}]}>
-              <Text>Just Pressable</Text>
-              </Pressable>
+      </Link>
+
+     <ThemedButton  onPress={handleSubmit}>
+        <Text>Hit Me</Text>
+     </ThemedButton>
       <Spacer height={150} backgroundColor="red">
         <Text>jdjd</Text>
         <View
@@ -41,16 +51,24 @@ export default Home;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: "center",
+    // justifyContent: "center",
     alignItems: "center",
-    backgroundColor: "#ffff00ff",
   },
   img: {
-    width: 200,
-    height: 200,
-    marginBottom: 20,
-    borderRadius: 100,
-    borderWidth: 2,
+    marginBottom: 2,
+      borderRadius: 10,
+    height: 100,
+    borderWidth: 1,
     borderColor: "maroon",
+  },
+  pressed: {
+    opacity: 0.7,
+  },
+  btn: {
+    marginTop: 20,
+    padding: 10,
+    borderWidth: 1,
+    backgroundColor: "lightblue",
+    borderRadius: 5,
   },
 });
