@@ -1,4 +1,4 @@
-import { Image, StyleSheet, Text, View } from "react-native";
+import { Image, Pressable, StyleSheet, Text, View } from "react-native";
 import Shelfie from "../assets/images/shelfie.png";
 import { Link } from "expo-router";
 import ThemedView from "../components/ThemedView";
@@ -11,15 +11,25 @@ const Home = () => {
         style={[styles.img, { width: 22 }]}
       />
       {/* <Image source={Shelfie}  /> */}
-      <Link href="/about">Go to About Page</Link>
-      <Text style={{ fontSize: 30, color: "maroon" }}>
-        Are you sure you are fine???
-      </Text>
-      <Spacer height={50}  backgroundColor="red">
-              <Text>jdjd</Text>
-              <View style={{borderColor:'white', borderWidth:2, height:10}}>
-                  
-              </View>
+      <Link href="/login" asChild>
+              <Pressable>
+                  <Spacer />
+                  <Text>Go to Login Page</Text>
+                  <Spacer />
+        </Pressable>
+      </Link>
+       <Link href="/{auth}/login" style={styles.link}>
+        <Text>Login</Text>
+          </Link>
+          
+          <Pressable style={[{pressed:()=>[styles.btn, styles.pressed]}]}>
+              <Text>Just Pressable</Text>
+              </Pressable>
+      <Spacer height={150} backgroundColor="red">
+        <Text>jdjd</Text>
+        <View
+          style={{ borderColor: "white", borderWidth: 2, height: 10 }}
+        ></View>
       </Spacer>
       <Text>Hellow</Text>
     </ThemedView>

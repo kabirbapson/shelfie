@@ -8,7 +8,12 @@ const About = () => {
     <View style={{flex:1, justifyContent:'center', alignItems:'center'}}>
           <Text>About</Text>
           <ThemedView>Hello</ThemedView>
-          <Link style={styles.link} href="/">Go to Home Page</Link>
+          <Link style={styles.link} href="/">
+              <Text>
+                  
+              Go to Home Page
+              </Text>
+          </Link>
     </View>
   )
 }

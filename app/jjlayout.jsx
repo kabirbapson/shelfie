@@ -17,9 +17,8 @@ const RootLayout = () => {
           headerTintColor: theme.text,
         }}
       >
-        <Stack.Screen name="index" options={{ title: "Home Page" }} />
         <Stack.Screen name="login" options={{ title: "Login" }} />
-        <Stack.Screen name="Register" options={{ title: "Register" }} />
+        <Stack.Screen name="register" options={{ title: "Register" }} />
         <Slot />
       </Stack>
     </>
